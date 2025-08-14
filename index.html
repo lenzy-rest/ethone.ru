@@ -63,6 +63,7 @@
     .main-content {
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -76,6 +77,56 @@
       background: linear-gradient(to right, #6e00ff, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    .purchase-link {
+      display: inline-block;
+      background-color: #8A2BE2;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+      text-decoration: none;
+    }
+
+    .purchase-link:hover {
+      background-color: #9932CC;
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+    }
+
+    .purchase-link:active {
+      transform: scale(0.96);
+    }
+
+    .purchase-link:active::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+      opacity: 0;
+      animation: lightning 0.3s ease-out;
+    }
+
+    @keyframes lightning {
+      0% {
+        opacity: 1;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
     }
 
     .faq-section {
@@ -101,6 +152,7 @@
       padding-bottom: 1rem;
       position: relative;
       z-index: 1;
+      overflow: hidden;
     }
 
     .faq-question {
@@ -110,12 +162,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: #bbb;
     }
 
     .faq-answer {
-      display: none;
-      padding-top: 0.5rem;
+      max-height: 0;
+      overflow: hidden;
       color: #bbb;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+      padding: 0;
+    }
+
+    .faq-question.active + .faq-answer {
+      max-height: 500px;
+      padding-top: 0.5rem;
     }
 
     .faq-question i {
@@ -150,6 +214,7 @@
 
   <div class="main-content">
     <h1>You cannot access our proxy. Only paid users.</h1>
+    <a href="https://ethonexv.mysellauth.com/" class="purchase-link">Purchase</a>
   </div>
 
   <div class="faq-section">
@@ -192,7 +257,7 @@
         <i class="fas fa-chevron-down"></i>
       </div>
       <div class="faq-answer">
-        No, we don’t offer free plans.
+        No, we don't offer free plans.
       </div>
     </div>
 
@@ -222,8 +287,6 @@
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
         q.classList.toggle('active');
-        const answer = q.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
   </script>
