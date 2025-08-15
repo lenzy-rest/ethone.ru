@@ -28,9 +28,14 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    body, html {
+    body,
+    html {
       font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
       scroll-behavior: smooth;
       color: white;
@@ -48,9 +53,21 @@
       z-index: 10;
     }
 
-    .navbar-left { display: flex; align-items: center; }
-    .navbar-left img { height: 32px; margin-right: 10px; }
-    .navbar-left span { font-size: 1.5rem; font-weight: bold; }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-left img {
+      height: 32px;
+      margin-right: 10px;
+    }
+
+    .navbar-left span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
     .navbar-right a {
       color: white;
       text-decoration: none;
@@ -58,7 +75,10 @@
       font-size: 1rem;
       transition: color 0.3s;
     }
-    .navbar-right a:hover { color: #bbb; }
+
+    .navbar-right a:hover {
+      color: #bbb;
+    }
 
     .main-content {
       min-height: 100vh;
@@ -72,8 +92,10 @@
       background-attachment: fixed;
       padding: 2rem;
     }
+
     .main-content h1 {
-      font-size: 2rem;
+      font-size: 4rem; /* Bigger title */
+      font-weight: 800; /* Bold title */
       background: linear-gradient(to right, #6e00ff, #ffffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -123,6 +145,7 @@
         opacity: 1;
         transform: scale(0);
       }
+
       100% {
         opacity: 0;
         transform: scale(1);
@@ -132,7 +155,7 @@
     .faq-section {
       background: black;
       position: relative;
-      padding: 3rem 2rem 25rem 2rem; 
+      padding: 3rem 2rem 25rem 2rem;
       overflow: hidden;
       z-index: 0;
     }
@@ -177,7 +200,7 @@
       padding: 0;
     }
 
-    .faq-question.active + .faq-answer {
+    .faq-question.active+.faq-answer {
       max-height: 500px;
       padding-top: 0.5rem;
     }
@@ -185,7 +208,10 @@
     .faq-question i {
       transition: transform 0.3s ease;
     }
-    .faq-question.active i { transform: rotate(180deg); }
+
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
 
     .wave {
       position: absolute;
@@ -213,12 +239,11 @@
   </div>
 
   <div class="main-content">
-    <h1>Proffesional DDoS Services</h1>
+    <h1>Profesional DDoS Services</h1>
     <a href="https://ethonexv.mysellauth.com/" class="purchase-link">Purchase</a>
   </div>
 
   <div class="faq-section">
-
     <h2>Friendly Asked Questions</h2>
 
     <div class="faq-item">
@@ -274,11 +299,13 @@
     <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <defs>
         <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#8A2BE2" stop-opacity="1"/>
-          <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+          <stop offset="0%" stop-color="#8A2BE2" stop-opacity="1" />
+          <stop offset="100%" stop-color="#000000" stop-opacity="1" />
         </linearGradient>
       </defs>
-      <path fill="url(#waveGradient)" d="M0,160L60,149.3C120,139,240,117,360,128C480,139,600,181,720,202.7C840,224,960,224,1080,202.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      <path fill="url(#waveGradient)"
+        d="M0,160L60,149.3C120,139,240,117,360,128C480,139,600,181,720,202.7C840,224,960,224,1080,202.7C1200,181,1320,139,1380,117.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+      </path>
     </svg>
 
   </div>
